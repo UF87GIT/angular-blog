@@ -1,0 +1,17 @@
+<div class="container">
+    
+    <div class="row">
+      <div class="col">
+        <h3>Comment list</h3>
+      </div>
+    </div>
+  
+    <div class="row" *ngFor="let comment of comments">
+      <div class="col">
+        <h4><span class="badge badge-secondary">#{{comment.id}}</span> {{comment.name}}</h4>
+        <p>{{comment.body}}</p>
+        <p><a href="mailto:{{comment.email}}">{{comment.email}}</a></p>
+      </div>
+    </div>
+    
+  </div>

@@ -1,0 +1,1 @@
+export const apiEndpoitsPrefix: string = 'https://jsonplaceholder.typicode.com/';

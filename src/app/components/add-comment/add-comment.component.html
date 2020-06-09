@@ -1,0 +1,37 @@
+<div class="box">
+  <div class="row">
+    <div class="col">
+      <h4>Add comment</h4>
+    </div>
+  </div>
+
+  <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col">
+          <label for="commentName">Name:</label>
+          <input type="text" name="commentName" class="form-control" formControlName="name" aria-describedby="nameHelp" required>
+          <small id="nameHelp" class="form-text text-muted">Please enter your nick name.</small>
+        </div>
+        <div class="col">
+          <label for="commentEmail">Email:</label>
+          <input type="text" name="commentEmail" class="form-control" formControlName="email" aria-describedby="emailHelp" required>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col">
+          <label for="commentBody">Body:</label>
+          <textarea class="form-control" name="commentBody" formControlName="body" required></textarea> 
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary add-comment-btn" [disabled]="!commentForm.valid">Submit</button>
+
+  </form>
+</div>

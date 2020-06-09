@@ -1,0 +1,37 @@
+<div class="container">
+    
+  <div class="row">
+    <div class="col">
+      <h4>Add post</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, ea!</p>
+    </div>
+  </div>
+
+  <div class="box">  
+    
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label for="postTitle">Title:</label>
+            <input type="text" name="postTitle" class="form-control" formControlName="title" required>
+          </div>
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label for="commentBody">Body:</label>
+            <textarea class="form-control" name="commentBody" formControlName="body" required></textarea> 
+          </div>
+        </div>
+      </div>
+    
+      <button type="submit" class="btn btn-primary add-post-btn" [disabled]="!postForm.valid">Submit</button>
+    
+    </form>
+  </div>
+
+</div>

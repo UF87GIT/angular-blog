@@ -1,0 +1,35 @@
+<div class="container">
+    
+  <div class="row">
+    <div class="col">
+      <h2>Post list</h2>
+    </div>
+  </div>
+
+  <div class="row" *ngFor="let post of posts">
+    <div class="col">
+      <h3><span class="badge badge-secondary">#{{post.id}}</span> {{post.title}}</h3>
+      <p>{{post.body}}</p>
+      <div class="row">
+        <div class="col">
+          <a [routerLink]="['/post', post.id]" class="">Read more...</a>
+        </div>
+        <div class="col text-right">
+          <span class="badge badge-dark">USER: {{post.userId}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col text-right toggle-add-post" *ngIf="!postBoxOpened">
+      <button (click)="postBoxOpened = true;" type="button" class="btn btn-secondary">Add post</button>
+    </div>
+    <div class="col text-right toggle-add-post" *ngIf="postBoxOpened">
+      <button (click)="postBoxOpened = false;" type="button" class="btn btn-dark">Hide box</button>
+    </div>
+  </div>
+
+  <app-add-post-component *ngIf="postBoxOpened"></app-add-post-component>
+
+</div>

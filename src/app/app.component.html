@@ -1,3 +1,31 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-menu side="start" contentId="main">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>
+            Menu
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+  
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle>
+            <ion-item lines="none" routerLink="/posts">
+              <ion-icon name="albums" slot="start"></ion-icon>
+              <ion-label>Post list</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item lines="none" routerLink="/add-post">
+              <ion-icon name="add-circle" slot="start"></ion-icon>
+              <ion-label>Add post</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

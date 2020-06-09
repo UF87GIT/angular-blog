@@ -1,5 +1,7 @@
 {
   "name": "bitninja",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
